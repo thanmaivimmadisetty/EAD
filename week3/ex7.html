@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Webpage Layout</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+.header {
+    height: 80px;
+    background-color: #222;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content {
+    display: flex;  
+    flex: 1;                 
+}
+.sidebar {
+    width: 220px;
+    background-color: lightgray;
+    color: white;
+    padding: 20px;
+}
+.main {
+    flex: 1;         
+    background-color: white;
+    padding: 20px;
+}
+
+.footer {
+    height: 60px;
+    background-color: #222;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    </style>
+</head>
+<body>
+
+    <header class="header">Header</header>
+
+    <div class="content">
+        <aside class="sidebar">Sidebar</aside>
+        <main class="main">Main Content</main>
+    </div>
+
+    <footer class="footer">Footer</footer>
+
+</body>
+</html>

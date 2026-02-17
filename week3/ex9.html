@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        display: flex;
+        height: 100vh;
+      }
+      .box {
+        flex: 1;
+        padding: 40px;
+        color: white;
+        text-align: center;
+        font-size: 20px;
+      }
+      .box1 {
+        background-color: #3f34db;
+      }
+      .box2 {
+        background-color: #39e922;
+      }
+      @media (max-width: 700px) {
+        .container {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="box box1">Section 1</div>
+      <div class="box box2">Section 2</div>
+    </div>
+  </body>
+</html>
