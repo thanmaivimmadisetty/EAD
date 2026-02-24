@@ -1,0 +1,19 @@
+th{
+    background-color: aquamarine;
+    height: auto;
+}
+.tab{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+h2{
+   font-weight: 200;
+}
+td{
+    background-color: coral;
+}
+th, td{
+    padding: 10px;
+}

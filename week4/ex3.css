@@ -1,0 +1,24 @@
+.myform{
+    background-color: aquamarine;
+    width:450px;
+    padding:13px;
+    border:3px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 4px;
+    height:auto;
+    align-content: center;
+    margin-left:420px;
+    margin-top:85px;
+    align-items: center;
+
+}
+button{
+    padding: 4px;
+}
+.textarea{
+    font-size: large;
+}
+label{
+    font-style: italic;
+    font-size:large;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student registration form</title>
+    <Link rel="stylesheet" href="ex1.css">
+</head>
+
+<body>
+
+    <div class="Form">
+
+        <div class="heading">
+
+            <h2>Student Registration Form</h2>
+        </div>
+        <form>
+            <label>Name:</label>
+            <input type="text" placeholder="enter your name">
+            <br>
+            <br>
+            <label>Roll number:</label>
+            <input type="text" placeholder="enter your roll number">
+            <br>
+            <br>
+            <label>Email:</label>
+            <input type="email" placeholder="enter your email">
+            <br>
+            <br>
+            <label>Phone Number:</label>
+            <input type="text" placeholder="enter your Phone number">
+            <br>
+            <br>
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender"></input>
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender"></input>
+            <label for="female">female</label>
+
+            <input type="radio" id="other" name="gender"></input>
+            <label for="other">other</label>
+            <br>
+            <br>
+            <label for="branch">Branch:</label>
+            <select id="branch" name="branch">
+                <option value="">--select branch--</option>
+                <option value="cse">Computer Science</option>
+                <option value="IT">Information Technology</option>
+                <option value="ME">Mechanical Engineering</option>
+                <option value="ECE">Electronics and communication Engineering</option>
+                <option value="BIO-TECH">Bio Technology</option>
+                <option value="EEE">Electronics and Electrical Engineering</option>
+            </select>
+            <br>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+       
+    </div>
+
+</body>
+
+</html>
