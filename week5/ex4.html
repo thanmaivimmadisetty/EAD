@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String processor</title>
+    <style>
+      .analyser {
+       display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 130px;
+        border: 3px solid black;
+        border-radius: 10px;
+        padding: 30px;
+        height: auto;
+        width: 350px;
+        background-color: lightgray;
+      }
+      #inp {
+        width: 300px; padding: 10px; font-size: 16px;  margin-bottom: 20px;
+      }
+      #btn {
+        padding: 10px 20px; font-size: 16px; cursor: pointer;
+        color: aliceblue; background-color: green;
+      }
+      body {
+        background-color: rgb(161, 232, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="analyser">
+      <input type="text" id="inp" placeholder="enter the string here" /><br>
+      <button id="btn">Process</button>
+      <div id="result1"></div>
+      <div id="result2"></div>
+      <div id="result3"></div>
+      <div id="result4"></div>
+    </div>
+    <script>
+      let button = document.getElementById("btn");
+      let input = document.getElementById("inp");
+      let result1 = document.getElementById("result1");
+      let result2 = document.getElementById("result2");
+      let result3 = document.getElementById("result3");
+      let result4 = document.getElementById("result4");
+      button.addEventListener("click", () => {
+        let str = input.value;
+        result1.innerHTML = `<h3>reverse of the string: ${(function () {
+          return str.split("").reverse().join("");
+        })()}</h3>`;
+         let vowels = () => {
+          let count = 0;
+          for (let i = 0; i < str.length; i++) {
+            if ("aeiouAEIOU".includes(str[i])) {
+              count++;
+            }
+          }
+          return count;
+        };
+        result2.innerHTML = `<h3>number of vowels in the string: ${vowels()}</h3>`;
+        result3.innerHTML = `<h3>longest word in the string: ${(function () {
+          let words = str.split(" ");
+          let longest = words[0];
+          for (let i = 1; i < words.length; i++) {
+            if (words[i].length > longest.length) {
+              longest = words[i];
+            }
+          }
+          return longest;
+        })()}</h3>`;
+        result4.innerHTML = `<h3>string in uppercase: ${str.toUpperCase()}</h3>`;
+       
+      });
+    </script>
+  </body>
+</html>

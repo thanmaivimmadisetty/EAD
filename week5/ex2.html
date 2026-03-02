@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .buttons{
+            display: grid;
+            grid-template-columns: repeat(4,60px);
+            grid-gap: 10px;
+            
+
+        }
+        .display{
+            border:2px solid black;
+            padding:25px;
+            font-size: large;
+            
+            max-width: 100%;
+
+        }
+        .calculator{
+            border:4px solid black;
+            padding:25px;
+            height:420px;
+            width:300px;
+            background-color: rgb(110, 109, 114);
+            border-radius:10px;
+            margin-top:100px;
+        }
+        button{
+            height:60px;
+            width:60px;
+            border:3px solid black;
+            border-radius:8px;
+        }
+        .row1{
+           background-color: yellow;
+        }
+        .equal{
+            background-color: green;
+        }
+        .col1{
+            background-color: skyblue;
+        }
+        button:hover{
+            background-color: lightgray;
+        }
+        body{
+            background-color: salmon;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" class="display" id="display">
+        <br><br>
+        <div class="buttons">
+            <!-- row1 -->
+             <button class="clear row1" onclick="clearDisplay()">C</button>
+             <button class="row1" onclick="appendValue('(')">(</button>
+             <button class="row1" onclick="appendValue(')')">)</button>
+             <button class="col1" onclick="appendValue('/')">/</button>
+             <!-- row2 -->
+             <button onclick="appendValue('7')">7</button>
+             <button onclick="appendValue('8')">8</button>
+             <button onclick="appendValue('9')">9</button>
+             <button class="col1" onclick="appendValue('*')">*</button>
+             <!-- row3 -->
+             <button onclick="appendValue('4')">4</button>
+             <button onclick="appendValue('5')">5</button>
+             <button onclick="appendValue('6')">6</button>
+             <button class="col1" onclick="appendValue('-')">-</button>
+             <!-- row4 -->
+              <button onclick="appendValue('1')">1</button>
+              <button onclick="appendValue('2')">2</button>
+              <button onclick="appendValue('3')">3</button>
+              <button class="col1" onclick="appendValue('+')">+</button>
+              <!-- row5 -->
+              <button onclick="appendValue('0')">0</button>
+              <button onclick="appendValue('.')">.</button>
+              <button class="equal" onclick="calculateResult()">=</button>
+             
+             
+        </div>
+    </div>
+    <script>
+        let display=document.getElementById("display");
+        function appendValue(value){
+            display.value+=value;
+        }
+        function clearDisplay(){
+            display.value="";
+        }
+        function calculateResult(){
+            try{
+                display.value=eval(display.value);
+            }
+            catch(error){
+                display.value="ERROR";
+            }
+        }
+    </script>
+</body>
+</html>

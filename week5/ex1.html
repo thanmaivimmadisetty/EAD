@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: antiquewhite; padding:8px;
+            border: 2px solid black;
+            width:300px;
+            height:225px;
+            border-radius:8px;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px; margin-left:500px;
+            box-shadow:5px 5px 5px 3px;
+        }
+        button{
+            background-color: green;
+            padding:5px;
+            color:white;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form id="form">
+            <h2><b>Login Page</b></h2>
+            <label for="name">Username</label>
+            <input id="username" type="text" placeholder="enter the user name" value=""><br><br>
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="enter a password" value=""><br><br>
+            <button id="btn">Submit</button>
+        </form>
+    </div>
+    <script>
+        let username=document.getElementById("username");
+        let password=document.getElementById("password");
+        let form=document.getElementById("form");
+        let btn=document.getElementById("btn");
+        let count=0;
+        let isvaliduser=true;
+        let isvalidpass=true;
+        form.addEventListener("submit",()=>{
+          event.preventDefault();
+          
+           
+            
+            if(username.value==""){
+                username.placeholder="cant be empty!";
+                isvaliduser=false;
+            }
+            else isvaliduser=true;
+                console.log(username.value);
+            if(password.value.length<6){
+                console.log(password.value);
+                password.value="";
+                password.placeholder="atleast 6 characters needed";
+                isvalidpass=false;
+            }
+            else isvalidpass=true;
+            if(!isvaliduser||!isvalidpass) count++;
+            
+            if(count>3){
+                btn.disabled=true;
+                username.value="";
+                password.value="";
+                username.placeholder="limit exceeded";
+                password.placeholder="limit exceeded";
+            }
+            
+            
+            console.log(count);
+        });
+      
+        
+    </script>
+</body>
+</html>

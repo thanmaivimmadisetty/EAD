@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .analyzer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+      border: 3px solid black;
+      border-radius: 10px;
+      padding: 30px;
+      height: auto; width: 350px;
+      background-color: lightgray;
+      margin-top:200px;
+
+    }
+    #input {
+      width: 300px;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    #analyze {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      color:aliceblue;
+      background-color: green;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    body{
+      background-color: lightblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+    <div class="analyzer">
+        <input type="text" id="input" placeholder="Enter number here">
+        <button id="analyze">Analyze</button>
+        <div id="result1"></div>
+        <div id="result2"></div>
+        <div id="result3"></div>
+        <div id="result4"></div>
+    </div>
+</body>
+<script>
+    let analyzeButton = document.getElementById('analyze');
+    let input=document.getElementById('input');
+    let result=document.getElementById('result');
+    analyzeButton.addEventListener("click",()=>{
+      let number=parseInt(input.value);
+      if(isPalindrome(number)){
+          result1.innerHTML=`<h3>${number} is a palindrome.</h3>`;
+          result1.style.color="green";
+      } else {
+          result1.innerHTML=`<h3>${number} is not a palindrome.</h3>`;
+          result1.style.color="red";
+      }
+       if(isArmstrong(number)){
+          result2.innerHTML=`<h3>${number} is an Armstrong number.</h3>`;
+          result2.style.color="green";
+      } else {
+          result2.innerHTML=`<h3>${number} is not an Armstrong number.</h3>`;
+          result2.style.color="red";
+      }
+      if(isPrime(number)){
+          result3.innerHTML=`<h3>${number} is a prime number.</h3>`;
+          result3.style.color="green";
+      } else {
+          result3.innerHTML=`<h3>${number} is not a prime number.</h3>`;
+          result3.style.color="red";
+      }
+      let factorial=1;
+      for(let i=1;i<=number;i++){
+        factorial*=i;
+      }
+      result4.innerHTML=`<h3> factorial of ${number} is ${factorial}.</h3>`;
+      result4.style.color="blue";
+      
+    });
+    let isPrime=(num)=>{
+      if(num<=1) return false;
+      for(let i=2;i<=Math.sqrt(num);i++){
+        if(num%i===0) return false;
+      }
+      return true;
+    }
+    let isPalindrome=(num)=>{
+      let k=num;
+      let rev=0;
+      while(k>0){
+        rev=rev*10+k%10;
+        k=Math.floor(k/10);
+      }
+      return num===rev;
+    }
+    let isArmstrong=(num)=>{
+      let k=num;
+      let sum=0;
+      let len=num.toString().length;
+      while(k>0){
+        sum+=Math.pow(k%10,len);
+        k=Math.floor(k/10);
+      }
+      return num===sum;
+    }
+
+</script>
+</html>
