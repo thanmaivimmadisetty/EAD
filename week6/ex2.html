@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Student Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="container mt-5">
+      <div class="card p-4 shadow-sm">
+        <h3 class="text-center mb-4">Student Registration</h3>
+        <div id="alertBox" class="alert alert-success d-none">
+          Registration Successful!
+        </div>
+        <form id="form">
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Roll Number</label>
+            <input type="text" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Photo</label>
+            <input type="file" class="form-control" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Gender</label><br />
+            <input type="radio" name="gender" /> Male
+            <input type="radio" name="gender" class="ms-3" /> Female
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Department</label>
+            <select class="form-select">
+              <option>Select</option>
+              <option>CSE</option>
+              <option>IT</option>
+              <option>ECE</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Subjects</label><br />
+            <input type="checkbox" /> DS
+            <input type="checkbox" class="ms-3" /> DBMS
+            <input type="checkbox" class="ms-3" /> OS
+          </div>
+          <button class="btn btn-primary">Submit</button>
+          <button type="reset" class="btn btn-secondary ms-2">Reset</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        document.getElementById("alertBox").classList.remove("d-none");
+      });
+    </script>
+  </body>
+</html>
